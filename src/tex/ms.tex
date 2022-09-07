@@ -1,57 +1,133 @@
-% Define document class
-\documentclass[twocolumn]{aastex631}
+%\documentclass[referee]{aa} % for a referee version
+%\documentclass[onecolumn]{aa} % for a paper on 1 column  
+%\documentclass[longauth]{aa} % for the long lists of affiliations 
+%\documentclass[letter]{aa} % for the letters 
+\documentclass{aa}
+
+\usepackage{txfonts}
+\usepackage{natbib}
+
+\usepackage{graphicx}
+
+\usepackage{color}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,allcolors=[rgb]{0,0,0.8}}
+
+
 \usepackage{showyourwork}
 
-% Begin!
-\begin{document}
+% the three lines suppress the hyperref 'link empty' warnings
+% explanation at: https://tex.stackexchange.com/questions/345764/journal-class-shows-package-hyperref-warning-suppressing-link-with-empty-targe
+\makeatletter
+\renewcommand*\aa@pageof{, page \thepage{} of \pageref*{LastPage}}
+\makeatother
 
-% Title
-\title{An open source scientific article}
+\usepackage{xspace}
 
-% Author list
-\author{@mkenworthy}
+\newcommand{\ktwo}{\textit{K2}}
+\newcommand{\kms}{km~s$^{-1}$\xspace}
+\newcommand{\ms}{m~s$^{-1}$}
+\newcommand{\gcc}{g~cm$^{-3}$}
+\newcommand{\masyr}{mas~yr$^{-1}$}
+\newcommand{\err}{\textit{$\pm$}}
+\newcommand{\teff}{$T_\mathrm{eff}$}
+\newcommand{\msun}{$M_\odot$}
+\newcommand{\rsun}{$R_\odot$}
+\newcommand{\lsun}{$L_\odot$}
+\newcommand{\rhosun}{$\rho_\odot$}
+\newcommand{\mstar}{$M_*$}
+\newcommand{\rstar}{$R_*$}
+\newcommand{\lstar}{$L_*$}
+\newcommand{\rearth}{$R_\oplus$}
+\newcommand{\vrad}{$v_{R}$}
+\newcommand{\pmra}{$\mu_{\alpha}$}
+\newcommand{\pmdec}{$\mu_{\delta}$}
 
-% Abstract with filler text
-\begin{abstract}
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-    Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.
-    Curabitur dictum gravida mauris, consectetuer id, vulputate a, magna.
-    Donec vehicula augue eu neque, morbi tristique senectus et netus et.
-    Mauris ut leo, cras viverra metus rhoncus sem, nulla et lectus vestibulum.
-    Phasellus eu tellus sit amet tortor gravida placerat.
-    Integer sapien est, iaculis in, pretium quis, viverra ac, nunc.
-    Praesent eget sem vel leo ultrices bibendum.
-    Aenean faucibus, morbi dolor nulla, malesuada eu, pulvinar at, mollis ac.
-    Curabitur auctor semper nulla donec varius orci eget risus.
-    Duis nibh mi, congue eu, accumsan eleifend, sagittis quis, diam.
-    Duis eget orci sit amet orci dignissim rutrum.
-\end{abstract}
+\newcommand{\rhostar}{$\rho_*$}
+\newcommand{\mjup}{$M_\mathrm{Jup}$}
+\newcommand{\galex}{\textit{GALEX}}
+\newcommand{\gaia}{\textit{Gaia}}
+\newcommand{\kepler}{\textit{Kepler}}
+\newcommand{\spitzer}{\textit{Spitzer}}
+\newcommand{\ktwosc}{\textsc{k2sc}}
+\newcommand{\ktwosff}{\textsc{k2sff}}
+\newcommand{\hipparcos}{\textit{Hipparcos}}
+\newcommand{\tess}{\textit{TESS}}
+\newcommand{\emcee}{\textsc{emcee}}
+\newcommand{\python}{\textsc{python}}
 
-% Main body with filler text
-\section{Introduction}
-\label{sec:intro}
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.
-Curabitur dictum gravida mauris, consectetuer id, vulputate a, magna.
-Donec vehicula augue eu neque, morbi tristique senectus et netus et.
-Mauris ut leo, cras viverra metus rhoncus sem, nulla et lectus vestibulum.
-Phasellus eu tellus sit amet tortor gravida placerat.
-Integer sapien est, iaculis in, pretium quis, viverra ac, nunc.
-Praesent eget sem vel leo ultrices bibendum.
-Aenean faucibus, morbi dolor nulla, malesuada eu, pulvinar at, mollis ac.
-Curabitur auctor semper nulla donec varius orci eget risus.
-Duis nibh mi, congue eu, accumsan eleifend, sagittis quis, diam.
-Duis eget orci sit amet orci dignissim rutrum.
+\begin{document} 
 
-Nam dui ligula, fringilla a, euismod sodales, sollici- tudin vel, wisi.
-Morbi auctor lorem non justo, nam lacus libero, pretium at, lobortis vitae.
-Donec aliquet, tortor sed accumsan bibendum, erat ligula aliquet magna.
-Morbi ac orci et nisl hendrerit mollis, suspendisse ut massa, cras nec ante.
-Pellentesque a nulla cum sociis natoque penatibus et magnis dis parturient.
-Aliquam tincidunt urna, nulla ullamcorper vestibulum turpis.
-Pellentesque cursus luctus mauris \citep{Luger2021}.
+   \title{The eclipse of ASASSN-21qj}
 
+   \author{M. Kenworthy
+          \inst{1}
+          \and
+          Arttu Sainio
+          \inst{2}
+          }
+
+   \institute{Leiden Observatory, University of Leiden,
+   PO Box 9513, 2300 RA Leiden, The Netherlands\\
+   \email{kenworthy@strw.leidenuniv.nl}
+         \and
+             Arttu's address ...\\
+    \and
+    JPL
+    \and
+    Caltech/IPAC, 1200 E California Blvd, Mail Code 100-22, Pasadena, CA 91125, USA}
+
+   \date{Received XXXX; accepted XXXX}
+
+% \abstract{}{}{}{}{} 
+% 5 {} token are mandatory
+ 
+  \abstract
+  % context heading (optional)
+  % {} leave it empty if necessary  
+   {Collisions occur between planetessimals that generate debris disks through collisional cascades.}
+  % aims heading (mandatory)
+   {We analyze the dust and size distribution of the eclipse seen towards ASASSN-21qj.}
+  % methods heading (mandatory)
+   {Fit the light curve from three different colours to determine the particle size and distribution.}
+  % results heading (mandatory)
+   {The eclipse is coloured, indicating dust.
+   %
+   The dust has a lower limit mass of XXXX Earths, eclipse has a duration of XXXX days.}
+  % conclusions heading (optional), leave it empty if necessary 
+   {}
+
+   \keywords{giant planet formation --
+                $\kappa$-mechanism --
+                stability of gas spheres
+               }
+
+   \maketitle
+%
+%-------------------------------------------------------------------
+
+   \section{Introduction}
+
+Terrestrial planets are thought to be built up by the quasi-periodic accretion of planetary embryos that generate a significant amount of ejected material.
+
+lets test this: \citep{Luger2021}
+%
+%------------------------
+\section{Conclusions}\label{sec:conclusion}
+
+   \begin{enumerate}
+      \item There was a collision between planetoids towards ASASSN-21qj which generated a debris cloud.
+      \item The cloud moved in front of the star, and we have a fresh measure of the debris from a collision.
+   \end{enumerate}
+
+\begin{acknowledgements}
+Thank matplotlib
+
+\end{acknowledgements}
+
+\bibliographystyle{aa}
 \bibliography{bib}
 
 \end{document}
+
