@@ -1,18 +1,16 @@
-%% Modified 2022-08-08 by @dfm to rename "marginnote" environment to "armarginnote" for showyourwork compatibility
-%%
-%% ar.cls - version 1.1
+%% ar.cls - version 1.1 
 %% Aptara Inc., dated 07 Mar. 2014
 %%
 %% Version 1.1 (History)
 %% ---------------------
-%% 1) Implemented the color.sty to avoide the
+%% 1) Implemented the color.sty to avoide the  
 %%    color related problems.
 %% 2) Used the ifpdf.sty for providing the PDF Paper
 %%    Size in case of pdflatex.
 %% 3) Seperation between author and year removed for Harvard style reference (unnumbered)
-%% 4) Removed the clashing of marginnote environment with amsmath.sty
+%% 4) Removed the clashing of marginnote environment with amsmath.sty 
 %% 5) Introduced an option to change format of Equation Number and a command ``\firstpagenote''to appear text on first page
-%%
+%% 
 %% For AR journals
 %%
 %% Steps to compile: latex latex latex
@@ -59,7 +57,7 @@
 \def\foliofont{\fontsize{7.5}{7.5}\itshape\selectfont}
 \def\figcaptionfont{\fontsize{8}{10}\selectfont\mathversion{normal}}
 \def\figcaptionnumfont{\sffamily\fontsize{8}{10}\selectfont\bfseries\mathversion{bold}}
-\def\tablecaptionfont{\fontsize{8}{12}\bfseries\selectfont\mathversion{normal}}%
+\def\tablecaptionfont{\fontsize{8}{12}\bfseries\selectfont\mathversion{normal}}% 
 \def\tablecaptionnumfont{\fontsize{8}{12}\bfseries\selectfont}
 \def\tablefont{\fontsize{8}{11}\selectfont\mathversion{normal}}%
 \def\tabnotefont{\fontsize{7}{10}\selectfont}%
@@ -72,8 +70,8 @@
 \def\paragraphfont{\bfseries\itshape}
 \def\subparagraphfont{\itshape}
 \def\extractfont{\fontsize{8}{12}\selectfont\mathversion{normal}}
-\def\armarginnotefont{\fontsize{8}{10}\selectfont\rightskip0\p@ plus1fill\mathversion{normal}}
-\def\bibarmarginnotefont{\fontsize{7}{10}\selectfont\bfseries\rightskip0\p@ plus1fill\mathversion{normal}}
+\def\marginnotefont{\fontsize{8}{10}\selectfont\rightskip0\p@ plus1fill\mathversion{normal}}
+\def\bibmarginnotefont{\fontsize{7}{10}\selectfont\bfseries\rightskip0\p@ plus1fill\mathversion{normal}}
 \def\bibliofont{\fontsize{8}{11}\selectfont\mathversion{normal}}
 %
 %
@@ -795,22 +793,22 @@
 %
 %%% Body environment declaration
 %
-\newcount\armarginnotecnt
-\newbox\armarginnotebox%
-\newenvironment{armarginnote}[1][\relax]
-  {\def\@tempa{#1}\global\advance\armarginnotecnt\@ne\let\entry\armarginnoteentry%
-   \edef\armarginnote@page{\getpagerefnumber{armarginnote@\the\armarginnotecnt}}
-   \setbox\armarginnotebox\vbox\bgroup\hsize6.5pc\armarginnotefont\parindent\z@\if\@tempa\relax\else\vskip\@tempa\fi%
+\newcount\marginnotecnt
+\newbox\marginnotebox%
+\newenvironment{marginnote}[1][\relax]
+  {\def\@tempa{#1}\global\advance\marginnotecnt\@ne\let\entry\marginnoteentry%
+   \edef\marginnote@page{\getpagerefnumber{marginnote@\the\marginnotecnt}}
+   \setbox\marginnotebox\vbox\bgroup\hsize6.5pc\marginnotefont\parindent\z@\if\@tempa\relax\else\vskip\@tempa\fi%
    \noindent\hbox to 6.5pc{\marginrulecolor{\hrulefill}}\par%
   }%
   {\par\vskip-2\p@\noindent\hbox to 6.5pc{\marginrulecolor{\hrulefill}}\egroup%
-   \ifodd\armarginnote@page
-     \marginpar{\hspace*{2.5\p@}\box\armarginnotebox}%
+   \ifodd\marginnote@page
+     \marginpar{\hspace*{2.5\p@}\box\marginnotebox}%
    \else
-     \marginpar{\hspace*{-23\p@}\box\armarginnotebox}%
-   \fi\label{armarginnote@\the\armarginnotecnt}}
-%
-\def\armarginnoteentry#1#2{\par\addvspace{4\p@}\noindent{\fignum@color{\sffamily\bfseries#1:}}\ #2\par}
+     \marginpar{\hspace*{-23\p@}\box\marginnotebox}%
+   \fi\label{marginnote@\the\marginnotecnt}}
+% 
+\def\marginnoteentry#1#2{\par\addvspace{4\p@}\noindent{\fignum@color{\sffamily\bfseries#1:}}\ #2\par}
 %
 \newcount\bibnotecnt
 \def\bibnote{\@ifnextchar[{\@bibnote}{\@bibnote[\relax]}}
@@ -818,10 +816,10 @@
   \global\advance\bibnotecnt\@ne%
   \edef\bibnote@page{\getpagerefnumber{bibnote@\the\bibnotecnt}}%
   \ifodd\bibnote@page
-    \marginpar{\hbox{\reset@font\hskip2.5\p@\parbox{6.5pc}{\vbox to \z@{\if\chk@tempa\relax\else\vskip\chk@tempa\fi\noindent\hbox to 6.5pc{\marginrulecolor{\hrulefill}}\par{\bibarmarginnotefont\ifx\chk@natbib@nonumref\YES\else\ifx\@tempa\@empty\else\theenumiv.\ \fi\fi#2\par}\par\vskip-6.6\p@%
+    \marginpar{\hbox{\reset@font\hskip2.5\p@\parbox{6.5pc}{\vbox to \z@{\if\chk@tempa\relax\else\vskip\chk@tempa\fi\noindent\hbox to 6.5pc{\marginrulecolor{\hrulefill}}\par{\bibmarginnotefont\ifx\chk@natbib@nonumref\YES\else\ifx\@tempa\@empty\else\theenumiv.\ \fi\fi#2\par}\par\vskip-6.6\p@%
     \noindent\hbox to 6.5pc{\marginrulecolor{\hrulefill}}}}}}%
   \else%
-    \marginpar{\hbox{\reset@font\hskip-23\p@\parbox{6.5pc}{\vbox to \z@{\if\chk@tempa\relax\else\vskip\chk@tempa\fi\noindent\hbox to 6.5pc{\marginrulecolor{\hrulefill}}\par{\reset@font\bibarmarginnotefont\ifx\chk@natbib@nonumref\YES\else\ifx\@tempa\@empty\else\theenumiv.\ \fi\fi#2\par}\vskip-6.6\p@%
+    \marginpar{\hbox{\reset@font\hskip-23\p@\parbox{6.5pc}{\vbox to \z@{\if\chk@tempa\relax\else\vskip\chk@tempa\fi\noindent\hbox to 6.5pc{\marginrulecolor{\hrulefill}}\par{\reset@font\bibmarginnotefont\ifx\chk@natbib@nonumref\YES\else\ifx\@tempa\@empty\else\theenumiv.\ \fi\fi#2\par}\vskip-6.6\p@%
     \noindent\hbox to 6.5pc{\marginrulecolor{\hrulefill}}}}}}%
 \fi%
 \label{bibnote@\the\bibnotecnt}
@@ -856,7 +854,7 @@
 \newcount\textboxcnt
 \newenvironment{textbox}[1][\relax]%
   {\gdef\textboxpos{#1}\global\advance\textboxcnt\@ne%
-   \edef\textbox@page{\getpagerefnumber{textbox@\the\textboxcnt}}
+   \edef\textbox@page{\getpagerefnumber{textbox@\the\textboxcnt}} 
    \setbox\z@\vbox\bgroup\hsize38pc\textboxfont\vskip12\p@\noindent\ignorespaces%
    \let\section\textboxhead%
    \let\subsection\textboxsubhead%
@@ -931,8 +929,8 @@
         \leftline{\ifodd\chk@fig@temp\hbox{\hspace*{\@tempdima}\box\z@}\else\hbox{\hspace*{-7.5pc}\hspace*{\@tempdima}\box\z@}\fi}
       \else%
         \centerline{\box\z@}
-      \fi%
-    \fi%
+      \fi%  
+    \fi%  
   \fi}
 %
 %
@@ -962,12 +960,12 @@
     %\def\@eqnnum{{\normalfont \normalcolor (\theequation)}}
     \def\@eqnnum{{\normalfont \normalcolor \theequation.}}
   }%
-\fi%
+\fi% 
 %%
 \@ifpackageloaded{hyperref}{%
   \def\@linkcolor{green}%
   \def\termkey#1{\hyperlink{key#1}{#1}}%
-  \def\armarginnoteentry#1#2{\par\addvspace{4\p@}\noindent{\fignum@color{\sffamily\bfseries#1:\hypertarget{key#1}{}}}\ #2\par}%
+  \def\marginnoteentry#1#2{\par\addvspace{4\p@}\noindent{\fignum@color{\sffamily\bfseries#1:\hypertarget{key#1}{}}}\ #2\par}%
 }{%
   \def\termkey#1{#1}%
 }
