@@ -25,5 +25,5 @@ for key, group in zip(t_by_filter.groups.keys, t_by_filter.groups):
     ax.errorbar(group['MJD'],group['fnorm'],yerr=group['fnormerr'],label=key['Filter'],fmt='.',alpha=0.8)
 
 ax.legend()
-plt.show()
-fig.savefig(paths.figures / 'asassn-21js.pdf')
+#plt.show()
+fig.savefig(paths.figures / 'asassn-21js.pdf', bbox_inches='tight')
