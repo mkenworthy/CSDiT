@@ -13,3 +13,7 @@ overleaf:
 dependencies:
     src/scripts/plot_asassn-21js.py:
         - src/data/obs_ASASSN-21js_ASASSN.ecsv
+    src/scripts/plot_asassn-21nn.py:
+        - src/data/obs_ASASSN-21nn_ASASSN.ecsv
+    src/scripts/plot_asassn-21sa.py:
+        - src/data/obs_ASASSN-21sa_ASASSN.ecsv

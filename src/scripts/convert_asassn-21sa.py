@@ -6,7 +6,7 @@ import paths
 
 from photomutils import *
 
-fin='ASASSN-21js/light_curve_f9818a9a-2dfc-4c33-ad97-826ae7b78a33.csv'
+fin='ASASSN-21sa/light_curve_0d7aa71d-615a-42a3-836b-0cf23615ec7b.csv'
 t = ascii.read(paths.data / fin)
 
 #      HJD           UT Date       Camera FWHM Limit   mag   mag_err flux(mJy) flux_err Filter
@@ -14,8 +14,8 @@ t = ascii.read(paths.data / fin)
 # 2457420.65322 2016-02-02.1500246     be 1.46 17.458  13.45   0.005    15.995     0.08      V
 
 t['MJD'] = t['HJD']-2400000.5
-obj='ASASSN-21js'
-flux_high = 30
+obj='ASASSN-21sa'
+flux_high = 75
 # reject noisy points
 t = t[(t['flux(mJy)']<flux_high)]
 print(f'rejected ASASSN points with high fluxes (> {flux_high} mJy) in both bands')
@@ -143,11 +143,11 @@ fig.savefig('_check_asassn4.pdf')
 
 binned_g_err = fsigc_bing/np.sqrt(np.sqrt(fc_npoig))
 
-(cum_bing, xbing, cumbing) = hist_errors (binned_g_err,frac_keep=0.90)
+(cum_bing, xbing, cumbing) = hist_errors (binned_g_err,frac_keep=0.95)
 
 binned_V_err = fsigc_binV/np.sqrt(np.sqrt(fc_npoiV))
 
-(cum_binV, xbinV, cumbinV) = hist_errors (binned_V_err,frac_keep=0.90)
+(cum_binV, xbinV, cumbinV) = hist_errors (binned_V_err,frac_keep=0.95)
 print(f'rejecting noisy points in binned g (>{cum_bing:5.3f}) and binned V (>{cum_binV:5.3f}) data separately in ASASSN')
 
 
@@ -172,7 +172,7 @@ ax.set_xlabel('Epoch [MJD]')
 ax.errorbar(tc_bing[mg],fc_bing[mg],yerr=binned_g_err[mg],label='g Band',fmt='.')
 ax.errorbar(tc_binV[mV],fc_binV[mV],yerr=binned_V_err[mV],label='V band',fmt='.')
 
-ax.set_title('ASASSN-21js binned and filtered light curve')
+ax.set_title('{obj} binned and filtered light curve')
 ax.legend()
 fig.savefig('_check_asassn6.pdf')
 
@@ -181,12 +181,12 @@ fig, (ax) = plt.subplots(1,1,figsize=(12,6))
 
 
 
-tminV, tmaxV = 58148, 58253
+tminV, tmaxV = 58150,58450
 
 (V_flux_norm, V_flux_norm_err)= \
     mean_rms_region(tc_binV[mV], fc_binV[mV], binned_V_err[mV], tminV, tmaxV)
 
-tming, tmaxg = 58454, 58723
+tming, tmaxg = 58150,58450
 
 (g_flux_norm, g_flux_norm_err)= \
     mean_rms_region(tc_bing[mg], fc_bing[mg], binned_g_err[mg], tming, tmaxg)
@@ -218,7 +218,7 @@ fig.savefig('_check_asassn9.pdf')
 
 tn = vstack([tVout,tgout])
 tn['Survey'] = "ASASSN"
-tn['Source'] = "ASASSN-21js"
-
-tn.write(paths.data / 'obs_ASASSN-21js_ASASSN.ecsv',
+tn['Source'] = obj
+#plt.show()
+tn.write(paths.data / 'obs_ASASSN-21sa_ASASSN.ecsv',
     format='ascii.ecsv',overwrite=True)
