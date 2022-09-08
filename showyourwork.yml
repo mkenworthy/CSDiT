@@ -17,3 +17,5 @@ dependencies:
         - src/data/obs_ASASSN-21nn_ASASSN.ecsv
     src/scripts/plot_asassn-21sa.py:
         - src/data/obs_ASASSN-21sa_ASASSN.ecsv
+    src/scripts/plot_J1706.py:
+        - src/data/obs_J1706_ASASSN.ecsv

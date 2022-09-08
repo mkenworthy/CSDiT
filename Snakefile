@@ -27,3 +27,13 @@ rule proc_asassn21sa:
         "environment.yml"
      script:
         "src/scripts/convert_asassn-21sa.py"
+
+rule proc_J1706:
+     input:
+        "src/data/J1706/light_curve_e7c6cf12-82c8-44b6-90ea-c9ee3c09e1ba.csv"
+     output:
+        "src/data/obs_J1706_ASASSN.ecsv"
+     conda:
+        "environment.yml"
+     script:
+        "src/scripts/convert_J1706.py"

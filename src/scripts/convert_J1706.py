@@ -6,7 +6,7 @@ import paths
 
 from photomutils import *
 
-fin='ASASSN-21nn/light_curve_49ee9f4d-675b-4cbd-8042-f13e024b41ba.csv'
+fin='J1706/light_curve_e7c6cf12-82c8-44b6-90ea-c9ee3c09e1ba.csv'
 t = ascii.read(paths.data / fin)
 
 #      HJD           UT Date       Camera FWHM Limit   mag   mag_err flux(mJy) flux_err Filter
@@ -14,8 +14,8 @@ t = ascii.read(paths.data / fin)
 # 2457420.65322 2016-02-02.1500246     be 1.46 17.458  13.45   0.005    15.995     0.08      V
 
 t['MJD'] = t['HJD']-2400000.5
-obj='ASASSN-21nn'
-flux_high = 40
+obj='J1706'
+flux_high = 75
 # reject noisy points
 t = t[(t['flux(mJy)']<flux_high)]
 print(f'rejected ASASSN points with high fluxes (> {flux_high} mJy) in both bands')
@@ -143,11 +143,11 @@ fig.savefig('_check_asassn4.pdf')
 
 binned_g_err = fsigc_bing/np.sqrt(np.sqrt(fc_npoig))
 
-(cum_bing, xbing, cumbing) = hist_errors (binned_g_err,frac_keep=0.98)
+(cum_bing, xbing, cumbing) = hist_errors (binned_g_err,frac_keep=0.95)
 
 binned_V_err = fsigc_binV/np.sqrt(np.sqrt(fc_npoiV))
 
-(cum_binV, xbinV, cumbinV) = hist_errors (binned_V_err,frac_keep=0.98)
+(cum_binV, xbinV, cumbinV) = hist_errors (binned_V_err,frac_keep=0.95)
 print(f'rejecting noisy points in binned g (>{cum_bing:5.3f}) and binned V (>{cum_binV:5.3f}) data separately in ASASSN')
 
 
@@ -220,5 +220,5 @@ tn = vstack([tVout,tgout])
 tn['Survey'] = "ASASSN"
 tn['Source'] = obj
 #plt.show()
-tn.write(paths.data / 'obs_ASASSN-21nn_ASASSN.ecsv',
+tn.write(paths.data / 'obs_J1706_ASASSN.ecsv',
     format='ascii.ecsv',overwrite=True)
