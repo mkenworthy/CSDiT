@@ -9,3 +9,7 @@ overleaf:
     - src/tex/ms.tex
     - src/tex/bib.bib
 
+
+dependencies:
+    src/scripts/plot_asassn-21js.py:
+        - src/data/obs_ASASSN-21js_ASASSN.ecsv
