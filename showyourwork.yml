@@ -9,6 +9,14 @@ overleaf:
     - src/tex/ms.tex
     - src/tex/bib.bib
 
+datasets:
+  10.5072/zenodo.1105307
+    contents:
+      light_curve_f9818a9a-2dfc-4c33-ad97-826ae7b78a33.csv: src/data/ASASSN-21js/light_curve_f9818a9a-2dfc-4c33-ad97-826ae7b78a33.csv
+      light_curve_49ee9f4d-675b-4cbd-8042-f13e024b41ba.csv: src/data/ASASSN-21nn/light_curve_49ee9f4d-675b-4cbd-8042-f13e024b41ba.csv
+      light_curve_0d7aa71d-615a-42a3-836b-0cf23615ec7b.csv: src/data/ASASSN-21sa/light_curve_0d7aa71d-615a-42a3-836b-0cf23615ec7b.csv
+      light_curve_e7c6cf12-82c8-44b6-90ea-c9ee3c09e1ba: src/data/J1706/light_curve_e7c6cf12-82c8-44b6-90ea-c9ee3c09e1ba.csv
+      light_curve_b1c2ca34-b951-4bf6-94aa-443a8dfe053c.csv: src/data/J1816/light_curve_b1c2ca34-b951-4bf6-94aa-443a8dfe053c.csv
 
 dependencies:
     src/scripts/plot_asassn-21js.py:
@@ -19,3 +27,5 @@ dependencies:
         - src/data/obs_ASASSN-21sa_ASASSN.ecsv
     src/scripts/plot_J1706.py:
         - src/data/obs_J1706_ASASSN.ecsv
+    src/scripts/plot_J1816.py:
+        - src/data/obs_J1816_ASASSN.ecsv

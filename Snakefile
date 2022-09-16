@@ -37,3 +37,13 @@ rule proc_J1706:
         "environment.yml"
      script:
         "src/scripts/convert_J1706.py"
+
+rule proc_J1816:
+     input:
+        "src/data/J1816/light_curve_b1c2ca34-b951-4bf6-94aa-443a8dfe053c.csv"
+     output:
+        "src/data/obs_J1816_ASASSN.ecsv"
+     conda:
+        "environment.yml"
+     script:
+        "src/scripts/convert_J1816.py"
