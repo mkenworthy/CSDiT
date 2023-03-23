@@ -6,10 +6,11 @@ import paths
 
 from photomutils import *
 
-fin='obs_J1816_ASASSN.ecsv'
+obj='J1816'
+
+fin=f'obs_{obj}_ASASSN.ecsv'
 t = ascii.read(paths.data / fin)
 
-obj='J1816'
 
 # get a list of the unique bandpasses
 t_by_filter = t.group_by('Filter')
@@ -29,4 +30,4 @@ ax.text(0.05, 0.05, obj, transform=ax.transAxes, **ty)
 
 ax.legend()
 #plt.draw()
-fig.savefig(paths.figures / 'J1816.pdf', bbox_inches='tight')
+fig.savefig(paths.figures / f'{obj}.pdf', bbox_inches='tight')

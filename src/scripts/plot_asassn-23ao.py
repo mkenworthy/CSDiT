@@ -5,8 +5,7 @@ from astropy.table import unique,vstack,Table
 import paths
 
 from photomutils import *
-
-obj='J1706'
+obj='ASASSN-23ao'
 
 fin=f'obs_{obj}_ASASSN.ecsv'
 t = ascii.read(paths.data / fin)

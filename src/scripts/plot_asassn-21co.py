@@ -5,8 +5,7 @@ from astropy.table import unique,vstack,Table
 import paths
 
 from photomutils import *
-
-obj='J1706'
+obj='ASASSN-21co'
 
 fin=f'obs_{obj}_ASASSN.ecsv'
 t = ascii.read(paths.data / fin)
@@ -17,7 +16,7 @@ t_by_filter = t.group_by('Filter')
 print('all observed photometric bands:')
 print(t_by_filter.groups.keys)
 
-fig, (ax) = plt.subplots(1,1,figsize=(12,6))
+fig, (ax) = plt.subplots(1,1,figsize=(12,6)) 
 ax.set_ylabel('Normalised flux')
 ax.set_xlabel('Epoch [MJD]')
 ax.set_title('data from {}'.format(fin))
