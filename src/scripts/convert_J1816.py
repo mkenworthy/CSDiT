@@ -219,6 +219,6 @@ fig.savefig('_check_asassn9.pdf')
 tn = vstack([tVout,tgout])
 tn['Survey'] = "ASASSN"
 tn['Source'] = obj
-plt.show()
+#plt.show()
 tn.write(paths.data / 'obs_J1816_ASASSN.ecsv',
     format='ascii.ecsv',overwrite=True)
