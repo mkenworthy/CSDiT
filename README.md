@@ -1,12 +1,10 @@
-<p align="center">
+<a href="https://github.com/mkenworthy/CSDiT/actions/workflows/build.yml"><img src="https://github.com/mkenworthy/HWObows/actions/workflows/build.yml/badge.svg?branch=main" alt="Article status"/></a>
+<a href="https://github.com/mkenworthy/CSDiT/raw/main-pdf/arxiv.tar.gz"><img src="https://img.shields.io/badge/article-tarball-blue.svg?style=flat" alt="Article tarball"/></a>
+<a href="https://github.com/mkenworthy/CSDiT/raw/main-pdf/ms.pdf"><img src="https://img.shields.io/badge/article-pdf-blue.svg?style=flat" alt="Read the article"/></a>
+<a href="https://github.com/showyourwork/showyourwork"><img src="https://img.shields.io/badge/created%20with-showyourwork!-ff0000" alt="created with showyourwork!"></a>
 
-<a href="https://github.com/mkenworthy/CSDtransits/actions/workflows/build.yml">
-<img src="https://github.com/mkenworthy/CSDtransits/actions/workflows/build.yml/badge.svg?branch=main" alt="Article status"/></a>
-<a href="https://github.com/mkenworthy/CSDtransits/raw/main-pdf/arxiv.tar.gz"><img src="https://img.shields.io/badge/article-tarball-blue.svg?style=flat" alt="Article tarball"/></a>
-<a href="https://github.com/mkenworthy/CSDtransits/raw/main-pdf/ms.pdf"><img src="https://img.shields.io/badge/article-pdf-blue.svg?style=flat" alt="Read the article"/></a>
-</p>
 
-# Circumsecondary Disks in Transit
+# CircumSecondary Disks in Transit
 
 M. Kenworthy
 
@@ -14,6 +12,4 @@ M. Kenworthy
 
 Several extended deep and complex eclipses have been seen towards otherwise unremarkable main sequence stars. This paper summarises the light curves that have been identified by the [ASASSN transients](https://www.astronomy.ohio-state.edu/asassn/transients.html), and the photometry was cleaned and aligned to produce the resultant curves, which form the basis for further study.
 
-The ASASSN transient list [Shappee et al. (2014)](https://ui.adsabs.harvard.edu/abs/2014ApJ...788...48S/abstract).
-
-An open source scientific article created using the [showyourwork](https://github.com/showyourwork/showyourwork) workflow.
+The ASASSN transient list should be referenced with [Shappee et al. (2014)](https://ui.adsabs.harvard.edu/abs/2014ApJ...788...48S/abstract).
