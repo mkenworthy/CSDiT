@@ -47,3 +47,13 @@ rule proc_J1816:
         "environment.yml"
      script:
         "src/scripts/convert_J1816.py"
+
+rule proc_asassn23ao:
+     input:
+        "src/data/ASASSN-23ao/light_curve_8607bbd1-ae8c-4b13-aa6d-18391e2a3d6b.csv"
+     output:
+        "src/data/obs_ASASSN-23ao_ASASSN.ecsv"
+     conda:
+        "environment.yml"
+     script:
+        "src/scripts/convert_asassn-23ao.py"
