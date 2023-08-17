@@ -20,7 +20,7 @@ rule proc_asassn21nn:
 
 rule proc_asassn21sa:
      input:
-        "src/data/ASASSN-21sa/light_curve_0d7aa71d-615a-42a3-836b-0cf23615ec7b.csv"
+        "src/data/ASASSN-21sa/light_curve_e7ba0675-9429-4b48-a68c-82cddc7e79ba.csv"
      output:
         "src/data/obs_ASASSN-21sa_ASASSN.ecsv"
      conda:
@@ -50,7 +50,7 @@ rule proc_J1816:
 
 rule proc_asassn23ao:
      input:
-        "src/data/ASASSN-23ao/light_curve_8607bbd1-ae8c-4b13-aa6d-18391e2a3d6b.csv"
+        "src/data/ASASSN-23ao/light_curve_e799edbd-140e-4170-a1d1-331d518c4291.csv"
      output:
         "src/data/obs_ASASSN-23ao_ASASSN.ecsv"
      conda:

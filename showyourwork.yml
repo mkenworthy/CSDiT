@@ -10,7 +10,7 @@ overleaf:
     - src/tex/bib.bib
 
 datasets:
-  10.5072/zenodo.1175760:
+  10.5072/zenodo.1232806:
     contents:
       light_curve_f9818a9a-2dfc-4c33-ad97-826ae7b78a33.csv: src/data/ASASSN-21js/light_curve_f9818a9a-2dfc-4c33-ad97-826ae7b78a33.csv
       light_curve_49ee9f4d-675b-4cbd-8042-f13e024b41ba.csv: src/data/ASASSN-21nn/light_curve_49ee9f4d-675b-4cbd-8042-f13e024b41ba.csv
@@ -18,6 +18,9 @@ datasets:
       light_curve_e7c6cf12-82c8-44b6-90ea-c9ee3c09e1ba.csv: src/data/J1706/light_curve_e7c6cf12-82c8-44b6-90ea-c9ee3c09e1ba.csv
       light_curve_b1c2ca34-b951-4bf6-94aa-443a8dfe053c.csv: src/data/J1816/light_curve_b1c2ca34-b951-4bf6-94aa-443a8dfe053c.csv
       light_curve_8607bbd1-ae8c-4b13-aa6d-18391e2a3d6b.csv: src/data/ASASSN-23ao/light_curve_8607bbd1-ae8c-4b13-aa6d-18391e2a3d6b.csv
+      light_curve_10d7cc26-23b0-4126-9792-a6d85034a25e.csv: src/data/ASASSN-23ao/light_curve_10d7cc26-23b0-4126-9792-a6d85034a25e.csv
+      light_curve_e799edbd-140e-4170-a1d1-331d518c4291.csv: src/data/ASASSN-23ao/light_curve_e799edbd-140e-4170-a1d1-331d518c4291.csv
+      light_curve_e7ba0675-9429-4b48-a68c-82cddc7e79ba.csv: src/data/ASASSN-21sa/light_curve_e7ba0675-9429-4b48-a68c-82cddc7e79ba.csv
 dependencies:
     src/scripts/plot_asassn-21js.py:
         - src/data/obs_ASASSN-21js_ASASSN.ecsv
