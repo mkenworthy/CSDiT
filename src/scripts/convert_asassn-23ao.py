@@ -4,11 +4,11 @@ from astropy.io import ascii
 from astropy.table import unique,vstack,Table
 import paths
 import matplotlib
-#matplotlib.use('MacOSX')
+matplotlib.use('MacOSX')
 
 from photomutils import *
 obj='ASASSN-23ao'
-fin=f'{obj}/light_curve_8607bbd1-ae8c-4b13-aa6d-18391e2a3d6b.csv'
+fin=f'{obj}/light_curve_e799edbd-140e-4170-a1d1-331d518c4291.csv'
 t = ascii.read(paths.data / fin)
 
 #      HJD           UT Date       Camera FWHM Limit   mag   mag_err flux(mJy) flux_err Filter

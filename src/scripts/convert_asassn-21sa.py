@@ -6,7 +6,7 @@ import paths
 
 from photomutils import *
 
-fin='ASASSN-21sa/light_curve_0d7aa71d-615a-42a3-836b-0cf23615ec7b.csv'
+fin='ASASSN-21sa/light_curve_e7ba0675-9429-4b48-a68c-82cddc7e79ba.csv'
 t = ascii.read(paths.data / fin)
 
 #      HJD           UT Date       Camera FWHM Limit   mag   mag_err flux(mJy) flux_err Filter
